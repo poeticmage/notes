@@ -1,0 +1,312 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("./notesappwallpaper.png") no-repeat center center fixed;
+  background-size: 100% 100%;
+  padding: 0 16px;
+}
+@media(max-width:768px){
+  body{
+    transform: scale(0.75);
+    transform-origin: top left;
+    width: 133.33%;
+    height: 133.33vh;
+    overflow-x: hidden;
+  }
+}
+
+
+
+
+
+header {
+  margin: auto -16px;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+.glitter{
+  color:#f0e6c9;
+  text-shadow: 0 0 5px rgb(69, 62, 24);
+  animation: glitter-animation 0.7s infinite alternate;
+}
+@keyframes glitter-animation {
+  0% {
+    text-shadow: 0 0 5px #99AABB, 0 0 10px #99AABB, 0 0 15px #99AABB;
+  }
+  100% {
+    text-shadow: 0 0 5px #f0e6c9, 0 0 10px #f0e6c9, 0 0 15px white;
+  }
+}
+
+
+header h1{
+  color: #fff;
+  font-family: 'Great Vibes', cursive;
+  font-weight: 200;
+}
+
+footer {
+  position: fixed;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+footer p {
+  color: rgba(88, 86, 75,0.3);
+}
+.note {
+  background: rgba(0,0,0,0.2);
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  width: 240px;
+  height: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  transition: all 0.3s ease;
+  cursor:grab;
+  margin: 16px;
+  float: left;
+}
+.note h1 {
+  font-size: 1.1em;
+  font-family: 'Playfair Display';
+  overflow-wrap: break-word;
+  margin-bottom: 6px;
+  color:#5d5402;
+}
+.note p {
+  font-size: 1.1em;
+  font-family: 'Lora';
+  color:#5d5402;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.note:hover {
+  transform: scale(1.1); 
+}
+
+.expanded {
+  background: rgba(0,0,0,0.2);
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  cursor: pointer;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  float: left;
+  word-wrap: break-word;
+}
+.expanded h1{
+  font-size: 1.1em;
+  font-family: 'Playfair Display';
+  overflow-wrap: break-word;
+  margin-bottom: 6px;
+  color: #dcd8bc;;
+
+}
+.expanded p{
+  font-size: 1.1em;
+  font-family: 'Lora';
+  color:#dcd8bc;;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+form {
+  position: fixed;
+  z-index: 10;
+  transition: transform 0.2s ease;
+  width: 500px;
+  height: 250px;
+  margin: 100px auto 100px auto;
+  margin-left: 50%;
+  margin-top: 15%;
+  transform: translate(-50%, -50%);
+  background: rgba(73,57,12,0.3);
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(163, 163, 163);
+}
+form input{
+  margin-top: 50px;
+}
+form input,
+form textarea {
+  background-color:rgba(73, 57, 12, 0.4);
+  overflow-wrap: break-word;
+  color: #dcd8bc;
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+}
+form input::placeholder,
+form textarea::placeholder {
+  color:rgba(220,216,188,0.75);
+}
+
+.webkitscroll::-webkit-scrollbar {
+  width: 6px; 
+}
+.webkitscroll::-webkit-scrollbar-thumb {
+  background: rgba(236, 227, 201, 0.3);
+  border-radius: 4px;
+}
+.webkitscroll::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+
+form button {
+  position: fixed;
+  right: 18px;
+  bottom: -18px;
+  background: #f5ba13;
+  color: #dcd8bc;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+}
+
+
+.buttoncs{
+  font-size: 1.1em;
+  background-color: rgba(245, 186, 19, 0.2);
+  border:none;
+  box-shadow: 5px 5px 7px #806A00;
+}
+
+
+.buttoncsL{
+  /* position: fixed;
+  top: 5px;
+  right: 10px; */
+  font-size: 1.1em;
+  background-color: rgba(245, 186, 19, 0.2);
+  border:none;
+  box-shadow: 5px 5px 7px #806A00;
+}
+
+
+.buttoncsX{
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  font-size: 1.1em;
+  background-color: rgba(245, 186, 19, 0.2);
+  border:none;
+  box-shadow: 5px 5px 7px #806A00;
+}
+.buttoncsL:hover, .buttoncsX:hover{
+  color: #dcd8bc;
+  transform: scale(2.0);
+}
+.deletebutton{
+  position: relative;
+  left: 18px;
+  bottom: 9px;
+  background: rgba(245, 186, 19,0.3);
+  color: #dcd8bc;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+}
+
+.loginbutton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height:36px;
+  font-size: 1.1em;
+  background-color: rgba(245, 186, 19, 0.2);
+  border:none;
+  box-shadow: 5px 5px 7px #806A00;
+  transition: transform 0.0s ease-in-out;
+}
+.loginbutton:hover{
+  color: #6C6A64;
+  transform: scale(2.0);
+}
+.button-container {
+  display: flex;
+  gap: 50px; /* Adjust spacing between buttons */
+}
+
+.signForm{
+  position: fixed;
+  z-index: 10;
+  transition: transform 0.2s ease;
+  width: 500px;
+  height: 250px;
+  margin: 100px auto 100px auto;
+  margin-left: 50%;
+  margin-top: 15%;
+  transform: translate(-50%, -50%);
+  background: rgba(245, 186, 19, 0.3);
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(163, 163, 163);
+  z-index: 1000;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999; 
+}
