@@ -160,7 +160,7 @@ function inpmouseOut(){
   await senddata();
   signedfunc(false);
   sessionStorage.clear(); 
-  window.location.replace("http://localhost:3001/"); ///react
+  window.location.replace("https://notes-sepia-ten.vercel.app/"); ///react
   await sweetalert.fire({
     title:"Congrats",
     text: `${userShow} is Logged Out`,
