@@ -134,7 +134,7 @@ function inpmouseOut(){
     const getInfo= await axios.get("https://notesappbackend-eight.vercel.app/loginGet",{
       params:{username,password}
     });
-    const data=getInfo.data;
+    const data=getInfo.data; console.log(data+" "+data.note);
     if(data.username==="") window.alert("NEW USER? User name taken- Get a different user name. OLD USER? Wrong password-Try Harder");
     else{      //console.log("Data received:", data.note.length);
       setnt(old => [...data.note, ...old]);
