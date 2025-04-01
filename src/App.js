@@ -110,7 +110,7 @@ function inpmouseOut(){
  async function senddata(){
   const username=userShow;
   const userdata=JSON.stringify(nt);
-   axios.put(`http://localhost:3000/login/${username}`,userdata,{
+   axios.put(`https://notesbackend-flax.vercel.app/login/${username}`,userdata,{
     headers: {"Content-Type": "application/json" } //The Top option in postman for put requests
   });
 }
@@ -131,7 +131,7 @@ function inpmouseOut(){
     return;
   }
   try{
-    const getInfo= await axios.get("http://localhost:3000/login/",{
+    const getInfo= await axios.get("https://notesbackend-flax.vercel.app/login/",{
       params:{username,password}
     });
     const data=getInfo.data; console.log(data+" "+data.note);
