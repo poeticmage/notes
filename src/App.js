@@ -110,7 +110,7 @@ function inpmouseOut(){
  async function senddata(){
   const username=userShow;
   const userdata=JSON.stringify(nt);
-   axios.put(`https://notesappbackend-eight.vercel.app/loginPut/${username}`,userdata,{
+   axios.put(`http://localhost:3000/login/${username}`,userdata,{
     headers: {"Content-Type": "application/json" } //The Top option in postman for put requests
   });
 }
@@ -124,19 +124,19 @@ function inpmouseOut(){
 
  }
  
- async function signinfire(){
+ async function signinfire(){ console.log("signin fired");
   const username=signintext.username.replace(/\s+/g, "");; const password=signintext.password;
   if(username===""||password===""){
     window.alert("username, passwords should not be spaces...");
     return;
   }
   try{
-    const getInfo= await axios.get("https://notesappbackend-eight.vercel.app/loginGet",{
+    const getInfo= await axios.get("http://localhost:3000/login/",{
       params:{username,password}
     });
     const data=getInfo.data; console.log(data+" "+data.note);
     if(data.username==="") window.alert("NEW USER? User name taken- Get a different user name. OLD USER? Wrong password-Try Harder");
-    else{      //console.log("Data received:", data.note.length);
+    else{      console.log("Data received:", data.note.length);
       setnt(old => [...data.note, ...old]);
       signBarVis(false);
       signedfunc(true);
@@ -160,7 +160,7 @@ function inpmouseOut(){
   await senddata();
   signedfunc(false);
   sessionStorage.clear(); 
-  window.location.replace("https://notes-sepia-ten.vercel.app/"); ///react
+  window.location.replace("http://localhost:3001"); ///react
   await sweetalert.fire({
     title:"Congrats",
     text: `${userShow} is Logged Out`,
