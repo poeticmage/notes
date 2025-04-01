@@ -110,8 +110,10 @@ function inpmouseOut(){
  async function senddata(){
   const username=userShow;
   const userdata=JSON.stringify(nt);
-   axios.put(`https://notesbackend-flax.vercel.app/login/${username}`,userdata,{
-    headers: {"Content-Type": "application/json" } //The Top option in postman for put requests
+   await axios.put(`https://notesbackend-flax.vercel.app/login/${username}`,userdata,{
+    headers: {"Content-Type": "application/json" },  //The Top option in postman for put requests
+     "Cache-Control": "no-cache",
+      "Pragma": "no-cache"
   });
 }
 
