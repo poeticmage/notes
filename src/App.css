@@ -310,3 +310,24 @@ form button {
   background: rgba(0, 0, 0, 0.7);
   z-index: 999; 
 }
+
+/* //Sweet alert, sweet alert automatically uses this class name, I am just changing it  */
+/* Add this to your App.css or a custom CSS file */
+.swal2-popup {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  /* Optionally, you can set a maximum width for mobile devices */
+  max-width: 90% !important;
+}
+
+/* Optional: Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .swal2-popup {
+    width: 90% !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+}
